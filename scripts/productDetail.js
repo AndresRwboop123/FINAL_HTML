@@ -148,5 +148,4 @@ function changeSubtotal(){
   const subtotal = cantidad*producto.price;
   const subtotalElement = document.getElementById("price");
   subtotalElement.innerText = `$${subtotal.toFixed(2)}`; // Actualizar el subtotal en la vistas
-
 }
