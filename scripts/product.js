@@ -31,7 +31,7 @@ const product2 = new Productoprop("iPhone 13 Pro", 1200000, "Smartphone","Incluy
 
 const product3 = new Productoprop("MacBook Pro", 2500000, "Laptop","Incluye impuesto PAIS y percepción AFIP","https://i.postimg.cc/kX8PKZpq/ipad2.jpg",["https://i.postimg.cc/kX8PKZpq/ipad2.jpg","https://i.postimg.cc/kX8PKZpq/ipad2.jpg"],
 "50%",
-"PR3","https://i.postimg.cc/kX8PKZpq/ipad2.jpg","https://i.postimg.cc/kX8PKZpq/ipad2.jpg"
+"PR3","sAYONARA"
 ,["Graphite", "Space Gray"]);
 
 

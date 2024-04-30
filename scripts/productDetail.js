@@ -1,7 +1,7 @@
 
 // Captura el parámetro "id" de la URL
 const urlParams = new URLSearchParams(window.location.search);
-const productId = urlParams.get('id');
+const productId = urlParams.get('id');  // este id del clase Productoprop es de product.js
 
 // Imprime el id por consola
 console.log(productId);
@@ -28,8 +28,11 @@ function printDetails(productId) {
 
 
         ${product.imagenmin.map(
-          (each) => `<img class="mini-img" src="${each}" alt="mini" onclick="changeMini(event)" />`
-      ).join("")}        
+          (each) => 
+          
+          {return `<img class="mini-img" src="${each}" alt="mini" onclick="changeMini(event)" />`}
+      
+          ).join("")}        
       
         </div>
         <img
@@ -95,9 +98,10 @@ function printDetails(productId) {
           <div class="checkout-process">
               <div class="top">
                    <input  class="product-input" type="number" min="1" value="1" id="quantity" onchange="changeSubtotal()" />
-                  <button type="button" class="cart-btn">
-                  Añadir al Carrito
-               </button>
+
+                    <button id="addButton" onclick="saveProduct('${product.id}')" type="button" class="cart-btn">
+                     Añadir al Carrito
+                    </button>
              </div>
               </div>
              </div>
@@ -111,9 +115,13 @@ function printDetails(productId) {
 
   
     `;
+
     const detailsSelector = document.querySelector("#details");
     detailsSelector.innerHTML = detailsTemplate;      //con esto eliminando de mi html y reemplazando. con mi JAVA
+
+ 
  }
+
  printDetails(productId);
 
 
@@ -122,18 +130,25 @@ function printDetails(productId) {
   // Dependiendo del evento de click, obtenemos la imagen miniatura que se ha seleccionado
   const clickedMiniature = event.target;
 
-
   console.log(clickedMiniature);
+
+
 
   // Guardamos la ruta de la imagen de la miniatura
   const miniatureSrc = clickedMiniature.src;
-
   // Seleccionamos el id de la imagen agrandada
   const bigImg = document.getElementById("big-img");
-
   // Actualizamos la vista con la imagen agrandada seleccionada
   bigImg.src = miniatureSrc;
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -149,3 +164,74 @@ function changeSubtotal(){
   const subtotalElement = document.getElementById("price");
   subtotalElement.innerText = `$${subtotal.toFixed(2)}`; // Actualizar el subtotal en la vistas
 }
+changeSubtotal(productId);
+
+
+
+
+
+
+
+
+
+
+
+//Guardando  itemssss
+
+function saveProduct(productId) {
+  const found = products.find((each) => each.id === productId);
+
+    // Obtener el precio y la cantidad del producto
+    const price = found.price;
+    const quantity = parseInt(document.querySelector("#quantity").value);
+
+    // Calcular el precio total
+    const priceTotal = price * quantity;  
+
+
+    // Obtener el contenido actual de "cart" del almacenamiento local
+    const cartContent = localStorage.getItem("cart");
+
+    if (cartContent) {
+           // Si la clave "cart" existe, parseamos su contenido a un array
+           let cart = JSON.parse(cartContent);
+
+                 // Verificar si el contenido de "cart" es un array
+                 if (!Array.isArray(cart)) {
+                  // Si el contenido de "cart" no es un array válido, inicializamos un nuevo array
+                   cart = [];
+                }
+       
+          // Agregar el nuevo producto al array
+            cart.push({
+             id: productId,
+            name: found.name,
+            price: found.price,
+            image: found.image,
+            colors: document.querySelector("#color").value,
+             quantity: quantity,
+             priceTotal: priceTotal
+             }) ;
+
+
+      // Guardar el array actualizado en el almacenamiento local
+      localStorage.setItem("cart", JSON.stringify(cart));
+    }  else {
+
+      
+          // Si la clave "cart" no existe, creamos un nuevo array con el producto
+          const productosguardado = [{
+          id: productId,
+          name: found.name,
+          price: found.price,
+          image: found.image,
+          colors: document.querySelector("#color").value,
+          quantity: quantity,
+          Pricetotal: price*quantity // Usar la variable priceTotal calculada
+        }];
+
+         // Guardar el nuevo array en el almacenamiento local
+        const stringifyProduct = JSON.stringify(productosguardado);
+        localStorage.setItem("cart", stringifyProduct);
+    }
+  }
