@@ -94,16 +94,25 @@ function printDetails(productId) {
                 seleccionando envío normal</span
               >
             </li>
-          </ul>
-          <div class="checkout-process">
-              <div class="top">
-                   <input  class="product-input" type="number" min="1" value="1" id="quantity" onchange="changeSubtotal()" />
+         </ul>
+                <div class="checkout-process">
+                    <div class="top">
+                         <input  class="product-input" type="number" min="1" value="1" id="quantity" onchange="changeSubtotal()" />
 
-                    <button id="addButton" onclick="saveProduct('${product.id}')" type="button" class="cart-btn">
-                     Añadir al Carrito
+                          <button id="addButton" onclick="saveProduct('${product.id}')" type="button" class="cart-btn">
+                           Añadir al Carrito
+                            </button>
+                    </div>
+                  </div>
+
+                  <div class="process">
+                  <div class="top">
+                    <button type="button" class="cart-btn2" id="cart-fav">
+                      Añadir a favoritos
                     </button>
-             </div>
-              </div>
+                  </div>
+                </div>
+
              </div>
          </div>
     </div>
@@ -176,9 +185,11 @@ changeSubtotal(productId);
 
 
 
-//Guardando  itemssss
 
-function saveProduct(productId) {
+
+//Guardando  itemssss para el carro
+
+function saveProduct(productId) { 
   const found = products.find((each) => each.id === productId);
 
     // Obtener el precio y la cantidad del producto
@@ -210,7 +221,7 @@ function saveProduct(productId) {
             image: found.image,
             colors: document.querySelector("#color").value,
              quantity: quantity,
-             priceTotal: priceTotal
+             Pricetotal: priceTotal
              }) ;
 
 
@@ -235,3 +246,44 @@ function saveProduct(productId) {
         localStorage.setItem("cart", stringifyProduct);
     }
   }
+  
+
+//function resetLocalStorage() {
+// localStorage.clear(); // Limpiar todos los datos almacenados en localStorage
+//  }
+    
+    // Llamar a la función para resetear localStorage al cargar la página
+//resetLocalStorage();
+
+
+
+
+
+
+
+/// redireccionando a la pagian cart
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Seleccionar el botón de añadir al carrito
+      var addToCartBtn = document.querySelector('.cart-btn');
+    
+      // Agregar un event listener para el clic en el botón
+      addToCartBtn.addEventListener('click', function() {
+        // Redirigir al usuario a la página del carrito
+        window.location.href = './cart.html';
+      });
+    });
+
+
+
+
+
+
+
+
+
+
+
+

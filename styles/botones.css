@@ -1,0 +1,46 @@
+.remove-item1 {
+    background-color: transparent; /* Fondo transparente por defecto */
+    border: none; /* Sin borde */
+    color: red; /* Color del icono de cierre */
+    font-size: 20px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    transition: color 0.3s, background-color 0.3s; /* Transición suave del color del texto y del fondo */
+    padding: 0; /* Eliminar el padding */
+    width: 20px; /* Ancho del cuadrado */
+    height: 20px; /* Altura del cuadrado */
+    border-radius: 3px; /* Borde redondeado para crear un cuadro circular */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra para resaltar el cuadro */
+    line-height: 20px; /* Centrar verticalmente el icono */
+    text-align: center; /* Centrar horizontalmente el icono */
+  }
+  
+  .remove-item1:hover {
+    color: darkred; /* Cambia el color del icono al pasar el ratón */
+    background-color: rgba(255, 0, 0, 0.1); /* Cambia el fondo del cuadrado al pasar el ratón */
+  }
+
+
+
+  .remove-item {
+    background-color: transparent; /* Fondo transparente por defecto */
+    border: none; /* Sin borde */
+    color: red; /* Color del icono de cierre */
+    font-size: 20px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambiar el cursor al pasar por encima */
+    transition: color 0.3s, background-color 0.3s; /* Transición suave del color del texto y del fondo */
+    padding: 0; /* Eliminar el padding */
+    width: 20px; /* Ancho del cuadrado */
+    height: 20px; /* Altura del cuadrado */
+    border-radius: 3px; /* Borde redondeado para crear un cuadro circular */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra para resaltar el cuadro */
+    line-height: 20px; /* Centrar verticalmente el icono */
+    text-align: center; /* Centrar horizontalmente el icono */
+    position: relative;
+    left: 9px;
+    top: 17px;
+  }
+  
+  .remove-item:hover {
+    color: darkred; /* Cambia el color del icono al pasar el ratón */
+    background-color: rgba(255, 0, 0, 0.1); /* Cambia el fondo del cuadrado al pasar el ratón */
+  }

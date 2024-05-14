@@ -166,3 +166,14 @@
   margin: 10px;
   background-color: white;
 }
+
+
+.cart-btn2 {
+  width: 100%;
+  background: #ff3b3c;
+  color: white;
+  font-weight: bold;
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+}

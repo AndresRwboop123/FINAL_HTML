@@ -10,14 +10,20 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles/layout.css" />
-    <link rel="stylesheet" href="./styles/cart.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/cart.css"/>
     <link rel="stylesheet" href="./styles/botones.css"/>
-    <script src="./scripts/cart.js" defer></script>
-    <script src="./scripts/buy.js" defer></script>
     
+    <script src="./scripts/product.js" defer></script>
+    <script src="./scripts/product1.js" defer></script>
+    <script src="./scripts/layout.js" defer></script>
+    <script src="./scripts/favoritos-reco.js" defer></script>
     <script src="./scripts/sesion.js" defer></script>
-    
-    <title>Tienda Virtual</title>
+   
+   
+
+ 
+    <title>Tienda </title>
   </head>
   <body>
     <header>
@@ -30,6 +36,13 @@
             alt="Logo store"
           />
         </a>
+
+
+        <form class="header-form">
+          <input class="header-input" type="text" placeholder="Search" id="search"    />
+          <!--onkeyup="ccptureText()" se agrega en el input para el primer problema de filterProduct.js-->
+        </form>
+
         <ul class="header-social">
           <li id="facebook" class="header-li">
             <a class="header-a" href="https://facebook.com">
@@ -58,28 +71,31 @@
 
 
 
+
+
           <li id="fav" class="header-li">
             <a class="header-a" href="Favoritos.html">
               <img
-                class="header-social-img" 
+                class="header-social-img" id="favidsesion"
                 src="./assets/pequenos-negocios.png"
+              
               />
             </a>
-                
             </li>
 
 
 
           <li id="sesionn" class="header-li">
-            <a class="header-a" href="#" id="sesionLink">
-              <img
-                class="header-social-img" id="sesionid"
-                src="./assets/sesion.png"
-              />
-            </a>
-          </li>  
+          <a class="header-a" href="#" id="sesionLink">
+            <img
+              class="header-social-img" id="sesionid"
+              src="./assets/sesion.png"
+            />
+          </a>
+        </li>
 
-        
+
+
 
 
 
@@ -106,10 +122,12 @@
     </header>
     <section class="hero-section">
       <article class="hero-title">
-        <span class="hero-span">mi</span>
-        <span class="hero-span">carrito</span>
+        <span class="hero-span">tecnología</span>
+        <span class="hero-span">renovada</span>
       </article>
     </section>
+    
+
     <section class="hero">
 
 
@@ -119,7 +137,7 @@
 
 
           
-          <article class="product-checkout-block1" id="cartproducts">
+          <article class="product-checkout-block1" id="cartproducts2">
            <div class="product-mod">
             <div class="checkout-container1">
 
@@ -159,36 +177,6 @@
           </article>
         </div>
 
-          <div class="product-checkout-block" id="total">
-            <div class="checkout-container">
-              <h3>Resumen del pedido</h3>
-
-
-              <div class="subcheck">
-                <h5>total</h5>
-                <h4 id="price2" class="checkout-total-price2">$750000</h4>
-              </div>
-              
-
-              <p class="checkout-description">
-                Incluye impuesto PAIS y percepción AFIP.
-              </p>
-              <ul class="checkout-policy-list">
-               
-              </ul>
-              <div class="checkout-process">
-                <div class="top">
-          
-                  <button type="button" class="cart-btn" id="finalizaCompra">
-                    Finaliza tu compra
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-        </div>
 
 
 
@@ -198,7 +186,10 @@
     </section>
 
 
-    <main></main>
+    
+    
+    <main>     
+    </main>
     <footer>
       <div id="footer" class="footer-container">
         <ul class="footer-ul">

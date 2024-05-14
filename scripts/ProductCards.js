@@ -198,3 +198,8 @@ function renderProducts(productsArray, idSelector) {
   
   // Llamada a la función para renderizar los productos
   renderProducts(products, 'products');
+
+
+
+
+

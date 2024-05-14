@@ -80,11 +80,11 @@ navSelector3.innerHTML = '';
 
 
 const options2 = [
-  { title: "Ofertas de la semana", linkTo: "./outlet.html" },
-  { title: "como", linkTo: "./how.html" },
+  { title: "Ofertas ", linkTo: "./outlet.html" },
+  { title: "Cómo comprar", linkTo: "./how.html" },
   { title: "tarifas", linkTo: "./taxs.html" },
-  { title: "ordenes", linkTo: "./orders.html" },
-  { title: "Canasta", linkTo: "./warranty.html" },
+  { title: "Mis pedidos", linkTo: "./orders.html" },
+  { title: "Garantia", linkTo: "./warranty.html" },
 ];
 
 
